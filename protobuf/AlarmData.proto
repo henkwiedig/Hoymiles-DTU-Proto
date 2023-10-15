@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+message WInfoMO {
+  int64 pv_sn = 1;
+  int32 WCode = 2;
+  int32 WNum = 3;
+  int32 WTime1 = 4;
+  int32 WTime2 = 5;
+  int32 WData1 = 6;
+  int32 WData2 = 7;
+}
+
+message WInfoReqDTO {
+  bytes dtu_sn = 1;
+  int32 time = 2;
+  repeated WInfoMO mWInfo = 3;
+}
+
+message WInfoResDTO {
+  bytes ymd_hms = 1;
+  int32 err_code = 2;
+  int32 offset = 3;
+  int32 time = 4;
+}
+
+message WWVDataReqDTO {
+  bytes dtu_sn = 1;
+  int32 time = 2;
+  int32 package_nub = 3;
+  int32 package_now = 4;
+  int64 pv_sn = 5;
+  int32 WCode = 6;
+  int32 WNum = 7;
+  int32 WTime1 = 8;
+  int32 WVDataL = 9;
+  int32 WPos = 10;
+  bytes mWVData = 11;
+}
+
+message WWVDataResDTO {
+  bytes ymd_hms = 1;
+  int32 package_now = 2;
+  int32 err_code = 3;
+  int32 offset = 4;
+  int32 time = 5;
+}

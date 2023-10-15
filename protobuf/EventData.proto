@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message EventDataRes {
+  int32 offset = 1;
+  int32 time = 2;
+  bytes ymd_hms_start = 3;
+}
+
+message MIEvent {
+  int32 event_code = 1;
+  int32 event_status = 2;
+  int32 event_count = 3;
+  int32 v_pv = 4;
+  int32 v_grid = 5;
+  int32 f_grid = 6;
+  int32 p_grid = 7;
+  int32 temp = 8;
+  int64 mi_id = 9;
+  int32 ymd_hms_start = 10;
+}
+
+message EventDataReq {
+  int32 offset = 1;
+  int32 time = 2;
+  repeated MIEvent mMIEvent = 3;
+}

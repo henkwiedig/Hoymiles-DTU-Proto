@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message AppGetHistEDRes {
+  int32 cp = 1;
+  int32 oft = 2;
+  uint32 time = 3;
+}
+
+message APPEnergyInfoMO {
+  uint32 ed = 1;
+  uint32 r_time = 2;
+}
+
+message AppGetHistEDReq {
+  int64 sn = 1;
+  int32 oft = 2;
+  uint32 time = 3;
+  repeated APPEnergyInfoMO energ = 4;
+}

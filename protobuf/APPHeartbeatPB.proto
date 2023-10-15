@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message HBReqDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int32 csq = 3;
+  bytes dtu_sn = 4;
+  bytes dev_sn = 5;
+}
+
+message HBResDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  bytes ymd_hms = 3;
+}

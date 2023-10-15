@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+message MeterDataMO {
+  int32 device_kind = 1;
+  int64 meter_sn = 2;
+  int32 meter_p_total = 3;
+  int32 meter_p_tta = 4;
+  int32 meter_p_ttb = 5;
+  int32 meter_p_ttc = 6;
+  int32 meter_factor = 7;
+  int32 meter_ep_total = 8;
+  int32 meter_ep_tta = 9;
+  int32 meter_ep_ttb = 10;
+  int32 meter_ep_ttc = 11;
+  int32 meter_en_total = 12;
+  int32 meter_en_tta = 13;
+  int32 meter_en_ttb = 14;
+  int32 meter_en_ttc = 15;
+  int32 meter_fault = 16;
+}
+
+message RpDataMO {
+  int64 rp_sn = 1;
+  int32 rp_signal = 2;
+  int32 rp_channel = 3;
+  int32 rp_link_nub = 4;
+  int32 rp_link_status = 5;
+}
+
+message PvDataMO {
+  int64 pv_sn = 1;
+  int32 pv_port = 2;
+  int32 pv_vol = 3;
+  int32 pv_cur = 4;
+  int32 pv_power = 5;
+  int32 pv_energy_total = 6;
+  int32 grid_vol = 7;
+  int32 grid_vol_max = 8;
+  int32 grid_freq = 9;
+  int32 grid_p = 10;
+  int32 grid_q = 11;
+  int32 grid_i = 12;
+  int32 grid_pf = 13;
+  int32 pv_temp = 14;
+  int32 pv_run_status = 15;
+  int32 pv_fault_num = 16;
+  int32 pv_fault_cnt = 17;
+  int32 pv_warnning_cnt = 18;
+  int32 pv_link_status = 19;
+  int32 pv_send_p = 20;
+  int32 pv_rev_p = 21;
+  int32 pv_time = 22;
+  int32 pv_energy = 23;
+  int32 mi_signal = 24;
+}
+
+message RealDataReqDTO {
+  bytes dtu_sn = 1;
+  int32 time = 2;
+  int32 device_nub = 3;
+  int32 pv_nub = 4;
+  int32 package_nub = 5;
+  int32 package_now = 6;
+  int32 csq = 7;
+  repeated MeterDataMO mMeterData = 8;
+  repeated RpDataMO mRpDatas = 9;
+  repeated PvDataMO mpvDatas = 10;
+  int32 version = 11;
+}
+
+message RealDataResDTO {
+  bytes ymd_hms = 1;
+  int32 package_now = 2;
+  int32 err_code = 3;
+  int32 offset = 4;
+  int32 time = 5;
+}

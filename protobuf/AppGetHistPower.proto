@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+message AppGetHistPowerRes {
+  int32 cp = 1;
+  int32 oft = 2;
+  uint32 time = 3;
+  uint32 get_day = 4;
+}
+
+message AppGetHistPowerReq {
+  int64 sn = 1;
+  int32 ap = 2;
+  int32 cp = 3;
+  int32 oft = 4;
+  uint32 time = 5;
+  uint32 time_st = 6;
+  uint32 l_time_start = 7;
+  uint32 abs_time_start = 8;
+  uint32 step_time = 9;
+  uint32 r_p = 10;
+  uint32 et = 11;
+  uint32 ed = 12;
+  repeated int32 p = 13;
+  uint32 warn_num = 14;
+}
