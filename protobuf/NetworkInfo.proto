@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 message NetworkInfoReq {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   uint32 time = 2;
   int32 net_set_mod = 3;
   int32 net_set_time = 4;

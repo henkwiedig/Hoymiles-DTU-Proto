@@ -12,14 +12,14 @@ message SetConfigRes {
   int32 channel_select = 9;
   int32 server_send_time = 10;
   int32 serverport = 11;
-  bytes apn_set = 12;
-  bytes meter_kind = 13;
-  bytes meter_interface = 14;
-  bytes wifi_ssid = 15;
-  bytes wifi_passward = 16;
-  bytes server_domain_name = 17;
+  string apn_set = 12;
+  string meter_kind = 13;
+  string meter_interface = 14;
+  string wifi_ssid = 15;
+  string wifi_passward = 16;
+  string server_domain_name = 17;
   int32 inv_type = 18;
-  bytes dtu_sn = 19;
+  string dtu_sn = 19;
   int32 access_model = 20;
   int32 mac_0 = 21;
   int32 mac_1 = 22;
@@ -38,8 +38,8 @@ message SetConfigRes {
   int32 default_gateway_1 = 35;
   int32 default_gateway_2 = 36;
   int32 default_gateway_3 = 37;
-  bytes apn_name = 38;
-  bytes apn_passward = 39;
+  string apn_name = 38;
+  string apn_passward = 39;
   int32 sub1g_sweep_switch = 40;
   int32 sub1g_work_channel = 41;
   int32 cable_dns_0 = 42;
@@ -48,8 +48,8 @@ message SetConfigRes {
   int32 cable_dns_3 = 45;
   int32 mac_4 = 46;
   int32 mac_5 = 47;
-  bytes dtu_ap_ssid = 48;
-  bytes dtu_ap_pass = 49;
+  string dtu_ap_ssid = 48;
+  string dtu_ap_pass = 49;
   int32 app_page = 50;
 }
 
