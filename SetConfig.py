@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 import socket
 from protobuf_inspector.types import StandardParser
 import GetConfig_pb2
 import SetConfig_pb2
-import time    
+import time
 import crcmod
 
 print("Warning !!! This is not tested. Remove this if you are brave")
@@ -76,7 +77,7 @@ try:
         field_name = field_descriptor.name
         field_value = value
         print(f"{field_name}: {field_value} ", end='')
-    print('')    
+    print('')
 
     header = b'\x48\x4d\xa3\x10'
     crc = crc16(setconfig.SerializeToString())
@@ -96,7 +97,7 @@ try:
         field_name = field_descriptor.name
         field_value = value
         print(f"{field_name}: {field_value} ", end='')
-    print('')    
+    print('')
 
 except Exception as e:
     print(f'Error: {e}')

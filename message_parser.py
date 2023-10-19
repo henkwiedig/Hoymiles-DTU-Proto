@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import struct
 import AppGetHistPower_pb2
 import APPInfomationData_pb2
@@ -18,7 +19,7 @@ def printfields(message):
         field_value = value
         print(f"{field_name}: {field_value} ", end='')
     print('')
-        
+
 def decode_AppGetHistPowerRes(data):
     message = AppGetHistPower_pb2.AppGetHistPowerRes()
     message.ParseFromString(data)
@@ -27,7 +28,7 @@ def decode_AppGetHistPowerRes(data):
 def decode_AppGetHistPowerReq(data):
     message = AppGetHistPower_pb2.AppGetHistPowerReq()
     message.ParseFromString(data)
-    printfields(message)    
+    printfields(message)
 
 def decode_HBResDTO(data):
     message = APPHeartbeatPB_pb2.HBResDTO()
@@ -67,42 +68,42 @@ def decode_AppGetHistEDRes(data):
 def decode_AppGetHistEDReq(data):
     message = AppGetHistED_pb2.AppGetHistEDReq()
     message.ParseFromString(data)
-    printfields(message)  
+    printfields(message)
 
 def decode_CommandStatusResDTO(data):
     message = CommandPB_pb2.CommandStatusResDTO()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_CommandStatusReqDTO(data):
     message = CommandPB_pb2.CommandStatusReqDTO()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_NetworkInfoRes(data):
     message = NetworkInfo_pb2.NetworkInfoRes()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_NetworkInfoReq(data):
     message = NetworkInfo_pb2.NetworkInfoReq()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_GetConfigRes(data):
     message = GetConfig_pb2.GetConfigRes()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_GetConfigReq(data):
     message = GetConfig_pb2.GetConfigReq()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_SetConfigRes(data):
     message = SetConfig_pb2.SetConfigRes()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_SetConfigReq(data):
     message = SetConfig_pb2.SetConfigReq()
@@ -112,22 +113,22 @@ def decode_SetConfigReq(data):
 def decode_RealResRes(data):
     message = RealData_pb2.RealDataResDTO()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_RealResReq(data):
     message = RealData_pb2.RealDataReqDTO()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_WInfoResRes(data):
     message = AlarmData_pb2.WInfoResDTO()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 def decode_WInfoResReq(data):
     message = AlarmData_pb2.WInfoReqDTO()
     message.ParseFromString(data)
-    printfields(message) 
+    printfields(message)
 
 crc16_modbus = crcmod.predefined.Crc('modbus')
 
@@ -162,7 +163,7 @@ with open(sys.argv[1], "rb") as file:
             decode_APPInfoDataResDTO(payload)
         elif command == 0xa201:
             print(f"0xa201 APPInfoDataReqDTO: ", end='')
-            decode_APPInfoDataReqDTO(payload)            
+            decode_APPInfoDataReqDTO(payload)
         elif command == 0xa302:
             print(f"0xa302 HBResDTO: ", end='')
             decode_HBResDTO(payload)
@@ -225,5 +226,3 @@ with open(sys.argv[1], "rb") as file:
 
 # Close the file when done
 file.close()
-
-

@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
 import socket
 from protobuf_inspector.types import StandardParser
 import AppGetHistPower_pb2
-import time    
+import time
 import crcmod
 
 # Define the server address and port

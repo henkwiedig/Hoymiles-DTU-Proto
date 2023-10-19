@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
 import socket
 from protobuf_inspector.types import StandardParser
 import NetworkInfo_pb2
-import time    
+import time
 import crcmod
 from datetime import datetime
 

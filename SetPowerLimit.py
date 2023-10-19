@@ -1,16 +1,17 @@
+#!/usr/bin/env python3
 import socket
 from protobuf_inspector.types import StandardParser
 import CommandPB_pb2
-import time    
+import time
 import crcmod
 
-#0xa305 CommandResDTO: time: 1695572445 action: 8 package_nub: 1 tid: 1695572445 data: b'A:800,B:0,C:0\r' 
-#0xa205 CommandReqDTO: dtu_sn: b'xxxxxxxxxxxxx' time: 1695572469 action: 8 tid: 1695572445 
-#0xa306 CommandStatusResDTO: time: 1695572446 action: 8 tid: 1695572446 
+#0xa305 CommandResDTO: time: 1695572445 action: 8 package_nub: 1 tid: 1695572445 data: b'A:800,B:0,C:0\r'
+#0xa205 CommandReqDTO: dtu_sn: b'xxxxxxxxxxxxx' time: 1695572469 action: 8 tid: 1695572445
+#0xa306 CommandStatusResDTO: time: 1695572446 action: 8 tid: 1695572446
 #0xa206 CommandStatusReqDTO: dtu_sn: b'xxxxxxxxxxxxx' time: 1695572471 action: 8 package_nub: 1 tid: 1695572445 mi_mOperatingStatus: [mi_sn: 22069994934680
 #...
-#0xa306 CommandStatusResDTO: time: 1695572450 action: 8 tid: 1695572450 
-#0xa206 CommandStatusReqDTO: dtu_sn: b'xxxxxxxxxxxxx' time: 1695572474 action: 8 package_nub: 1 tid: 1695572445 mi_sns_sucs: [22069994934680] 
+#0xa306 CommandStatusResDTO: time: 1695572450 action: 8 tid: 1695572450
+#0xa206 CommandStatusReqDTO: dtu_sn: b'xxxxxxxxxxxxx' time: 1695572474 action: 8 package_nub: 1 tid: 1695572445 mi_sns_sucs: [22069994934680]
 
 # Define the server address and port
 server_address = ('192.168.1.203', 10081)
