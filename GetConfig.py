@@ -18,7 +18,7 @@ try:
     # Connect to the server
     client_socket.connect(server_address)
 
-    request = GetConfig_pb2.GetConfigRes()
+    request = GetConfig_pb2.GetConfigResDTO()
     request.offset = 28800
     request.time = int(time.time()) - 60
 
@@ -35,7 +35,7 @@ try:
     # Receive the response
     response_data = client_socket.recv(1024)
     print(f"Response: {response_data}")
-    response = GetConfig_pb2.GetConfigReq()
+    response = GetConfig_pb2.GetConfigReqDTO()
     response.ParseFromString(response_data[10:])
     for field_descriptor, value in response.ListFields():
         field_name = field_descriptor.name

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-message EventDataRes {
+message EventDataResDTO {
   int32 offset = 1;
   int32 time = 2;
   string ymd_hms_start = 3;
@@ -19,7 +19,7 @@ message MIEvent {
   int32 ymd_hms_start = 10;
 }
 
-message EventDataReq {
+message EventDataReqDTO {
   int32 offset = 1;
   int32 time = 2;
   repeated MIEvent mMIEvent = 3;

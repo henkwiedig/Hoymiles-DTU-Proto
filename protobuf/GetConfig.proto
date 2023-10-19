@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-message GetConfigRes {
+message GetConfigResDTO {
   int32 offset = 1;
   uint32 time = 2;
 }
 
-message GetConfigReq {
+message GetConfigReqDTO {
   int32 offset = 1;
   uint32 time = 2;
   int32 lock_password = 3;
