@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
 import socket
 from protobuf_inspector.types import StandardParser
-import RealData_pb2
-import time    
+import RealDataNew_pb2
+import time
 import crcmod
 from datetime import datetime
 
@@ -19,9 +20,9 @@ try:
     # Connect to the server
     client_socket.connect(server_address)
 
-    request = RealData_pb2.RealDataResDTO()
+    request = RealDataNew_pb2.RealDataNewResDTO()
     request.ymd_hms = datetime.now().strftime("%Y-%m-%d %H:%M:%S").encode("utf-8")
-    request.offset = 28800
+    request.oft = 28800
     request.time = int(time.time())
 
 
@@ -37,7 +38,7 @@ try:
     # Receive the response
     response_data = client_socket.recv(1024)
     print(f"Response: {response_data}")
-    response = RealData_pb2.RealDataReqDTO()
+    response = RealDataNew_pb2.RealReqDTO()
     response.ParseFromString(response_data[10:])
     for field_descriptor, value in response.ListFields():
         field_name = field_descriptor.name

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 message WarnReqDTO {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   int32 time = 2;
   int32 package_nub = 3;
   int32 package_now = 4;
@@ -20,7 +20,7 @@ message WarnMO {
 }
 
 message WarnResDTO {
-  bytes ymd_hms = 1;
+  string ymd_hms = 1;
   int32 package_now = 2;
   int32 err_code = 3;
   int32 offset = 4;
@@ -28,7 +28,7 @@ message WarnResDTO {
 }
 
 message WaveReqDTO {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   int32 time = 2;
   int32 package_nub = 3;
   int32 package_now = 4;
@@ -38,11 +38,11 @@ message WaveReqDTO {
   int32 warn_time = 8;
   int32 data_len = 9;
   int32 pos = 10;
-  bytes warn_data = 11;
+  string warn_data = 11;
 }
 
 message WaveResDTO {
-  bytes ymd_hms = 1;
+  string ymd_hms = 1;
   int32 package_now = 2;
   int32 err_code = 3;
   int32 offset = 4;

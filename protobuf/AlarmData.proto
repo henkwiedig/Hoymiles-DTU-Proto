@@ -11,20 +11,20 @@ message WInfoMO {
 }
 
 message WInfoReqDTO {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   int32 time = 2;
   repeated WInfoMO mWInfo = 3;
 }
 
 message WInfoResDTO {
-  bytes ymd_hms = 1;
+  string ymd_hms = 1;
   int32 err_code = 2;
   int32 offset = 3;
   int32 time = 4;
 }
 
 message WWVDataReqDTO {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   int32 time = 2;
   int32 package_nub = 3;
   int32 package_now = 4;
@@ -34,11 +34,11 @@ message WWVDataReqDTO {
   int32 WTime1 = 8;
   int32 WVDataL = 9;
   int32 WPos = 10;
-  bytes mWVData = 11;
+  string mWVData = 11;
 }
 
 message WWVDataResDTO {
-  bytes ymd_hms = 1;
+  string ymd_hms = 1;
   int32 package_now = 2;
   int32 err_code = 3;
   int32 offset = 4;

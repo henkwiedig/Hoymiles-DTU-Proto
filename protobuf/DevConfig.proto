@@ -3,8 +3,8 @@ syntax = "proto3";
 message DevConfigFetchResDTO {
   int32 time = 1;
   int64 tid = 2;
-  bytes dtu_sn = 3;
-  bytes dev_sn = 4;
+  string dtu_sn = 3;
+  string dev_sn = 4;
   int32 package_now = 5;
   int32 rule_type = 6;
 }
@@ -13,11 +13,11 @@ message DevConfigFetchReqDTO {
   int32 time = 1;
   int64 tid = 2;
   int32 rule_id = 3;
-  bytes data = 4;
+  string data = 4;
   int32 crc = 5;
-  bytes dtu_sn = 6;
-  bytes dev_sn = 7;
-  bytes cfg_data = 8;
+  string dtu_sn = 6;
+  string dev_sn = 7;
+  string cfg_data = 8;
   int32 cfg_crc = 9;
   int32 package_nub = 10;
   int32 package_now = 11;
@@ -28,11 +28,11 @@ message DevConfigPutResDTO {
   int32 time = 1;
   int64 tid = 2;
   int32 rule_id = 3;
-  bytes data = 4;
+  string data = 4;
   int32 crc = 5;
-  bytes dtu_sn = 6;
-  bytes dev_sn = 7;
-  bytes cfg_data = 8;
+  string dtu_sn = 6;
+  string dev_sn = 7;
+  string cfg_data = 8;
   int32 cfg_crc = 9;
   int32 package_nub = 10;
   int32 package_now = 11;
@@ -43,8 +43,8 @@ message DevConfigPutResDTO {
 message DevConfigPutReqDTO {
   int32 time = 1;
   int64 tid = 2;
-  bytes dtu_sn = 3;
-  bytes dev_sn = 4;
+  string dtu_sn = 3;
+  string dev_sn = 4;
   int32 status = 5;
   int32 package_now = 6;
   repeated int64 mi_to_sn = 7;
@@ -55,11 +55,11 @@ message DevConfigReportReqDTO {
   int32 time = 1;
   int64 tid = 2;
   int32 rule_id = 3;
-  bytes data = 4;
+  string data = 4;
   int32 crc = 5;
-  bytes dtu_sn = 6;
-  bytes dev_sn = 7;
-  bytes cfg_data = 8;
+  string dtu_sn = 6;
+  string dev_sn = 7;
+  string cfg_data = 8;
   int32 cfg_crc = 9;
   int32 package_nub = 10;
   int32 package_now = 11;
@@ -69,8 +69,8 @@ message DevConfigReportReqDTO {
 message DevConfigReportResDTO {
   int32 time = 1;
   int64 tid = 2;
-  bytes dtu_sn = 3;
-  bytes dev_sn = 4;
+  string dtu_sn = 3;
+  string dev_sn = 4;
   int32 package_now = 5;
   int32 rule_type = 6;
 }

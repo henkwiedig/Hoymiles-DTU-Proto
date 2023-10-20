@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-message NetworkInfoReq {
-  bytes dtu_sn = 1;
+message NetworkInfoReqDTO {
+  string dtu_sn = 1;
   uint32 time = 2;
   int32 net_set_mod = 3;
   int32 net_set_time = 4;
@@ -13,7 +13,7 @@ message NetworkInfoReq {
   int32 ap_set_state = 10;
 }
 
-message NetworkInfoRes {
+message NetworkInfoResDTO {
   int32 offset = 1;
   uint32 time = 2;
 }

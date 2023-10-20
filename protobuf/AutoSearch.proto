@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-message AutoSearchReq {
-  bytes dtu_sn = 1;
+message AutoSearchReqDTO {
+  string dtu_sn = 1;
   int32 time = 2;
   int32 package_nub = 3;
   int32 package_now = 4;
   repeated int64 mi_sn = 5;
 }
 
-message AutoSearchRes {
-  bytes ymd_hms = 1;
+message AutoSearchResDTO {
+  string ymd_hms = 1;
   int32 offset = 2;
   int32 package_now = 3;
   int32 err_code = 4;

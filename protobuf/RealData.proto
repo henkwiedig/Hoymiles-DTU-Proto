@@ -55,7 +55,7 @@ message PvDataMO {
 }
 
 message RealDataReqDTO {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   int32 time = 2;
   int32 device_nub = 3;
   int32 pv_nub = 4;
@@ -69,7 +69,7 @@ message RealDataReqDTO {
 }
 
 message RealDataResDTO {
-  bytes ymd_hms = 1;
+  string ymd_hms = 1;
   int32 package_now = 2;
   int32 err_code = 3;
   int32 offset = 4;

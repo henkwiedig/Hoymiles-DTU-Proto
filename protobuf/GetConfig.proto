@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-message GetConfigRes {
+message GetConfigResDTO {
   int32 offset = 1;
   uint32 time = 2;
 }
 
-message GetConfigReq {
+message GetConfigReqDTO {
   int32 offset = 1;
   uint32 time = 2;
   int32 lock_password = 3;
@@ -18,14 +18,14 @@ message GetConfigReq {
   int32 server_send_time = 10;
   int32 wifi_rssi = 11;
   int32 serverport = 12;
-  bytes apn_set = 13;
-  bytes meter_kind = 14;
-  bytes meter_interface = 15;
-  bytes wifi_ssid = 16;
-  bytes wifi_passward = 17;
-  bytes server_domain_name = 18;
+  string apn_set = 13;
+  string meter_kind = 14;
+  string meter_interface = 15;
+  string wifi_ssid = 16;
+  string wifi_passward = 17;
+  string server_domain_name = 18;
   int32 inv_type = 19;
-  bytes dtu_sn = 20;
+  string dtu_sn = 20;
   int32 access_model = 21;
   int32 mac_0 = 22;
   int32 mac_1 = 23;
@@ -44,9 +44,9 @@ message GetConfigReq {
   int32 default_gateway_1 = 36;
   int32 default_gateway_2 = 37;
   int32 default_gateway_3 = 38;
-  bytes ka_nub = 39;
-  bytes apn_name = 40;
-  bytes apn_passward = 41;
+  string ka_nub = 39;
+  string apn_name = 40;
+  string apn_passward = 41;
   int32 sub1g_sweep_switch = 42;
   int32 sub1g_work_channel = 43;
   int32 cable_dns_0 = 44;
@@ -65,7 +65,7 @@ message GetConfigReq {
   int32 wifi_mac_3 = 57;
   int32 wifi_mac_4 = 58;
   int32 wifi_mac_5 = 59;
-  bytes gprs_imei = 60;
-  bytes dtu_ap_ssid = 61;
-  bytes dtu_ap_pass = 62;
+  string gprs_imei = 60;
+  string dtu_ap_ssid = 61;
+  string dtu_ap_pass = 62;
 }

@@ -7,8 +7,8 @@ message CommandResDTO {
   int32 package_nub = 4;
   int32 package_now = 5;
   int64 tid = 6;
-  bytes data = 7;
-  repeated bytes es_to_sn = 8;
+  string data = 7;
+  repeated string es_to_sn = 8;
   repeated int64 mi_to_sn = 9;
   int32 system_total_a = 10;
   int32 system_total_b = 11;
@@ -19,7 +19,7 @@ message CommandResDTO {
 }
 
 message CommandReqDTO {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   int32 time = 2;
   int32 action = 3;
   int32 package_now = 4;
@@ -28,7 +28,7 @@ message CommandReqDTO {
 }
 
 message ESOperatingStatusMO {
-  bytes es_sn = 1;
+  string es_sn = 1;
   int32 progress_rate = 2;
 }
 
@@ -43,24 +43,24 @@ message MIErrorStatusMO {
 }
 
 message ESSucStatusMO {
-  bytes es_sn = 1;
+  string es_sn = 1;
 }
 
 message ESErrorStatusMO {
-  bytes es_sn = 1;
+  string es_sn = 1;
   int64 error_code = 2;
 }
 
 message CommandStatusReqDTO {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   int32 time = 2;
   int32 action = 3;
   int32 package_nub = 4;
   int32 package_now = 5;
   int64 tid = 6;
-  repeated bytes es_sns_sucs = 7;
+  repeated string es_sns_sucs = 7;
   repeated int64 mi_sns_sucs = 8;
-  repeated bytes es_sns_failds = 9;
+  repeated string es_sns_failds = 9;
   repeated int64 mi_sns_failds = 10;
   repeated ESOperatingStatusMO es_mOperatingStatus = 11;
   repeated MIOperatingStatusMO mi_mOperatingStatus = 12;

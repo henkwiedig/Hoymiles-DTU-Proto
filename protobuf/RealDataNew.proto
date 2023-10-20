@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+message MeterMO {
+    int32 type = 1;
+    int64 sn = 2;
+    int32 p_tt = 3;
+    int32 p_tta = 4;
+    int32 p_ttb = 5;
+    int32 p_ttc = 6;
+    int32 pf_tt = 7;
+    int32 ep_tt = 8;
+    int32 ep_tta = 9;
+    int32 ep_ttb = 10;
+    int32 ep_ttc = 11;
+    int32 en_tt = 12;
+    int32 en_tta = 13;
+    int32 en_ttb = 14;
+    int32 en_ttc = 15;
+    int32 fault = 16;
+    int32 u_a = 17;
+    int32 u_b = 18;
+    int32 u_c = 19;
+    int32 i_a = 20;
+    int32 i_b = 21;
+    int32 i_c = 22;
+    int32 pf_a = 23;
+    int32 pf_b = 24;
+    int32 pf_c = 25;
+}
+
+message RpMO {
+    int64 sn = 1;
+    int32 sign = 2;
+    int32 chan = 3;
+    int32 pv_nub = 4;
+    int32 link = 5;
+}
+
+message RSDMO {
+    int64 sn = 1;
+    int32 ver = 2;
+    int32 v = 3;
+    int32 p = 4;
+    int32 temp = 5;
+    int32 wnum = 6;
+    int32 crc = 7;
+    int32 link = 8;
+}
+
+message SGSMO {
+    int64 sn = 1;
+    int32 ver = 2;
+    int32 v = 3;
+    int32 freq = 4;
+    int32 p = 5;
+    int32 q = 6;
+    int32 i = 7;
+    int32 pf = 8;
+    int32 temp = 9;
+    int32 wnum = 10;
+    int32 crc = 11;
+    int32 link = 12;
+    int32 p_lim = 13;
+    int32 mi_signal = 20;
+}
+
+message TGSMO {
+    int64 sn = 1;
+    int32 ver = 2;
+    int32 v_a = 3;
+    int32 v_b = 4;
+    int32 v_c = 5;
+    int32 v_ab = 6;
+    int32 v_bc = 7;
+    int32 v_ca = 8;
+    int32 freq = 9;
+    int32 p = 10;
+    int32 q = 11;
+    int32 i_a = 12;
+    int32 i_b = 13;
+    int32 i_c = 14;
+    int32 pf = 15;
+    int32 temp = 16;
+    int32 wnum = 17;
+    int32 crc = 18;
+    int32 link = 19;
+    int32 mi_signal = 20;
+}
+
+message PvMO {
+    int64 sn = 1;
+    int32 pi = 2;
+    int32 v = 3;
+    int32 i = 4;
+    int32 p = 5;
+    int32 et = 6;
+    int32 ed = 7;
+    int32 code = 8;
+}
+
+message RealDataNewReqDTO {
+    string sn = 1;
+    int32 time = 2;
+    int32 ap = 3;
+    int32 cp = 4;
+    int32 ver = 5;
+    repeated MeterMO meter_datas = 6;
+    repeated RpMO rp_datas = 7;
+    repeated RSDMO rsd_datas = 8;
+    repeated SGSMO sgs_datas = 9;
+    repeated TGSMO tgs_datas = 10;
+    repeated PvMO pv_datas = 11;
+    uint64 dtu_p = 12;
+    uint64 dtu_ed = 13;
+}
+
+message RealDataNewResDTO {
+    string ymd_hms = 1;
+    int32 cp = 2;
+    int32 err_code = 3;
+    int32 oft = 4;
+    int32 time = 5;
+}

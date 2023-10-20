@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-message AppGetHistPowerRes {
+message AppGetHistPowerResDTO {
   int32 cp = 1;
   int32 oft = 2;
   uint32 time = 3;
   uint32 get_day = 4;
 }
 
-message AppGetHistPowerReq {
+message AppGetHistPowerReqDTO {
   int64 sn = 1;
   int32 ap = 2;
   int32 cp = 3;

@@ -10,9 +10,9 @@ message APPDtuInfoMO {
   int32 access_model = 7;
   int32 communication_time = 8;
   int32 signal_strength = 9;
-  bytes gprs_vsn = 10;
-  bytes wifi_vsn = 11;
-  bytes ka_nub = 12;
+  string gprs_vsn = 10;
+  string wifi_vsn = 11;
+  string ka_nub = 12;
   int32 dtu_rule_id = 13;
   int32 dtu_error_code = 14;
   int32 dtu485_mode = 15;
@@ -22,7 +22,7 @@ message APPDtuInfoMO {
   int32 sub1g_chnum = 19;
   int32 sub1g_rp = 20;
   int32 sub1g_chtotal = 21;
-  bytes gprs_imei = 22;
+  string gprs_imei = 22;
 }
 
 message APPMeterInfoMO {
@@ -33,7 +33,7 @@ message APPMeterInfoMO {
   int32 com_way = 5;
   int32 access_mode = 6;
   int32 sw_vsn = 7;
-  bytes meter_val = 8;
+  string meter_val = 8;
 }
 
 message APPRpInfoMO {
@@ -60,11 +60,11 @@ message APPPvInfoMO {
 
 message APPFeatureMO {
   int32 key = 1;
-  bytes value = 2;
+  string value = 2;
 }
 
 message APPInfoDataReqDTO {
-  bytes dtu_sn = 1;
+  string dtu_sn = 1;
   uint32 time = 2;
   int32 device_nub = 3;
   int32 pv_nub = 4;
@@ -80,7 +80,7 @@ message APPInfoDataReqDTO {
 }
 
 message APPInfoDataResDTO {
-  bytes ymd_hms = 1;
+  string ymd_hms = 1;
   int32 offset = 2;
   int32 package_now = 3;
   int32 err_code = 4;

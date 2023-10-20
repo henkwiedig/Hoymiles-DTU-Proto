@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
 import socket
 from protobuf_inspector.types import StandardParser
 import AppGetHistPower_pb2
-import time    
+import time
 import crcmod
 
 # Define the server address and port
@@ -17,7 +18,7 @@ try:
     # Connect to the server
     client_socket.connect(server_address)
 
-    request = AppGetHistPower_pb2.AppGetHistPowerRes()
+    request = AppGetHistPower_pb2.AppGetHistPowerResDTO()
     request.oft = 28800
     request.time = int(time.time())
 
@@ -33,7 +34,7 @@ try:
     # Receive the response
     response_data = client_socket.recv(1024)
     #print(f"Response: {response_data}")
-    response = AppGetHistPower_pb2.AppGetHistPowerReq()
+    response = AppGetHistPower_pb2.AppGetHistPowerReqDTO()
     response.ParseFromString(response_data[10:])
     for field_descriptor, value in response.ListFields():
         field_name = field_descriptor.name

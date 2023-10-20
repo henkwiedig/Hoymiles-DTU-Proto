@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 import socket
 from protobuf_inspector.types import StandardParser
 import GetConfig_pb2
 import SetConfig_pb2
-import time    
+import time
 import crcmod
 
 print("Warning !!! This is not tested. Remove this if you are brave")
@@ -21,7 +22,7 @@ try:
     # Connect to the server
     client_socket.connect(server_address)
 
-    request = GetConfig_pb2.GetConfigRes()
+    request = GetConfig_pb2.GetConfigResDTO()
     request.offset = 28800
     request.time = int(time.time())
 
@@ -45,7 +46,7 @@ try:
         print(f"{field_name}: {field_value} ", end='')
     print('')
 
-    setconfig = SetConfig_pb2.SetConfigRes()
+    setconfig = SetConfig_pb2.SetConfigResDTO()
     setconfig.offset = 28800
     setconfig.time = int(time.time())
     setconfig.lock_time = response.lock_time
@@ -76,7 +77,7 @@ try:
         field_name = field_descriptor.name
         field_value = value
         print(f"{field_name}: {field_value} ", end='')
-    print('')    
+    print('')
 
     header = b'\x48\x4d\xa3\x10'
     crc = crc16(setconfig.SerializeToString())
@@ -96,7 +97,7 @@ try:
         field_name = field_descriptor.name
         field_value = value
         print(f"{field_name}: {field_value} ", end='')
-    print('')    
+    print('')
 
 except Exception as e:
     print(f'Error: {e}')

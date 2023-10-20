@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
 import socket
 from protobuf_inspector.types import StandardParser
 import NetworkInfo_pb2
-import time    
+import time
 import crcmod
 from datetime import datetime
 
@@ -19,7 +20,7 @@ try:
     # Connect to the server
     client_socket.connect(server_address)
 
-    request = NetworkInfo_pb2.NetworkInfoRes()
+    request = NetworkInfo_pb2.NetworkInfoResDTO()
     request.offset = 28800
     request.time = int(time.time())
 
@@ -36,7 +37,7 @@ try:
     # Receive the response
     response_data = client_socket.recv(1024)
     #print(f"Response: {response_data}")
-    response = NetworkInfo_pb2.NetworkInfoReq()
+    response = NetworkInfo_pb2.NetworkInfoReqDTO()
     response.ParseFromString(response_data[10:])
     for field_descriptor, value in response.ListFields():
         field_name = field_descriptor.name
