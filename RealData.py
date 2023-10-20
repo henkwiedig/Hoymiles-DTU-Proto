@@ -38,7 +38,7 @@ try:
     # Receive the response
     response_data = client_socket.recv(1024)
     print(f"Response: {response_data}")
-    response = RealDataNew_pb2.RealReqDTO()
+    response = RealDataNew_pb2.RealDataNewReqDTO()
     response.ParseFromString(response_data[10:])
     for field_descriptor, value in response.ListFields():
         field_name = field_descriptor.name
