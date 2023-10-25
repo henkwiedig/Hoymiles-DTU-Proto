@@ -157,6 +157,6 @@ void loop()
 
   client.stop();
 
-  Serial.println("Waiting 5 seconds before restarting...");
-  delay(5000);
+  Serial.println("Waiting 120 seconds before restarting...");
+  delay(120000);
 }
